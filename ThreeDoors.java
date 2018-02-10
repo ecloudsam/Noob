@@ -4,12 +4,12 @@ import java.util.*;
 
 public class ThreeDoors {
     public static void main (String[] args) {
-        
+
         int stayWins = 0;
         int changeWins = 0;
         Random gen = new Random();
 
-        for(int i = 0; i<10000; i++){
+        for(int i = 0; i<1000000; i++){
             int[] doors = {0,0,0};
             doors[gen.nextInt(3)] = 1;
 
@@ -22,7 +22,11 @@ public class ThreeDoors {
             if(doors[choose] == 1){
                 stayWins = stayWins + 1;
             }else{
-                if(doors[3 - choose - show] == 1){
+                int change;
+                do{
+                    change = gen.nextInt(3);
+                }while(change == choose || change == show);
+                if(doors[change] == 1){
                     changeWins = changeWins + 1;
                 }
             }
