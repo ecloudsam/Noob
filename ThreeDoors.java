@@ -4,6 +4,7 @@ import java.util.*;
 
 public class ThreeDoors {
     public static void main (String[] args) {
+        
         int stayWins = 0;
         int changeWins = 0;
         Random gen = new Random();
@@ -29,5 +30,4 @@ public class ThreeDoors {
         System.out.println("保持选择胜利次数："+(stayWins));
         System.out.println("改变选择胜利次数："+(changeWins));
     }
-
 }
